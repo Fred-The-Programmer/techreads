@@ -1,0 +1,22 @@
+        <!-- <div class="Status col-xs-2"><h4>Status</h4></div>
+        <div class="Date col-xs-1"><h4>Date</h4></div> -->
+
+           <!-- <div class="Status col-xs-2"><c:out value="${book.status}" /></div>
+           <div class="Date col-xs-1"><c:out value="${book.date}" /></div> -->
+
+           <div class="View col-xs-1">
+               <c:url var="viewUrl" value="/view/${book.ID}" />
+               <form action="books/view/${book.ID}">
+                       <input class="btn btn-info" type="submit" value="View Book" />
+               </form>
+           </div>
+           <div class="Delete col-xs-1">
+               <c:url var="deleteUrl" value="/books/delete" />
+                       <form id="${bookFormId}" action="${deleteUrl}" method="POST">
+                           <input id="book" name="book" type="hidden" value="${book.ID}" />
+                           <input class="btn btn-danger" type="submit" value="delete"
+                               onClick="return confirm('Are you sure you want to delete this book?')" />
+                       </form>
+                   </div>
+           <div class="col-sm-12"></div>
+
